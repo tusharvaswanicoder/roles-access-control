@@ -1,17 +1,19 @@
-import React from 'react';
-import ReactDOM from 'react-dom/client';
-import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
+export { default as ComponentAccess } from "./Components/ComponentAccess.jsx";
+export { default as RouteAccess } from "./Components/RouteAccess.jsx";
+export { default as useComponentAccess } from "./useComponentAccess.jsx";
+export { default as RolesAccessControlContextProvider } from "./Context/RolesAccessControlContextProvider.jsx";
+export { RolesAccessControlContext } from "./Context/RolesAccessControlContextProvider.jsx";
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
-root.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>
-);
+export const or = (...permissions) => {
+    return {
+        type: "or",
+        permissions,
+    };
+};
 
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-reportWebVitals();
+export const and = (...permissions) => {
+    return {
+        type: "and",
+        permissions,
+    };
+};
