@@ -7,7 +7,7 @@ This library contains Context, HOC and hooks for roles and access based control 
 This package can be installed as following:
 
 ```
-npm install --save react-simple-rbac
+npm i roles-access-control
 
 ```
 
